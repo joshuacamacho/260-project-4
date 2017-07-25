@@ -1,7 +1,11 @@
-#!user/bin/perl
+#!/usr/bin/perl
 use strict;
-my $file = $ARGV[0];
 
+my $file = $ARGV[0];
+if(!$file){
+ print "need command line argument containing file\n";
+ exit
+}
 while (1) {
 print "(1) List Alphabetically\n";
 print "(2) List Reverse Alphabetically\n";
@@ -54,8 +58,5 @@ my $input = <STDIN>;
  } else {
  
  }
-
-
-
 
 }
