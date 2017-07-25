@@ -1,4 +1,5 @@
 #!/bin/bash
+#sort alphabetically
 alpha() {
  while (( 1 ))
  do
@@ -21,6 +22,7 @@ alpha() {
  done
 }
 
+#sort reverse alphabetically
 reverse() {
  while (( 1 ))
  do
@@ -43,6 +45,7 @@ reverse() {
  done
 }
 
+#search by lastname
 lastname() {
   echo 'Enter last name to enter'
   read input
@@ -50,6 +53,7 @@ lastname() {
   grep "^[A-Z][a-z]* $input:" $file
 }
 
+#search by birthday
 birthday(){
  echo '(1) Search by month'
  echo '(2) Search by year'
@@ -70,9 +74,10 @@ birthday(){
  esac
 }
 
-if [ ! -f $1 ] 
+#check if file was given at command line
+if [ $# -ne 1 ] 
  then
-  echo 'File doesnt exist'
+  echo 'Command line argument needed - datebook.txt needs to be passed in'
   exit
 fi
 file=$1
